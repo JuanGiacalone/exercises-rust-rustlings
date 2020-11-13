@@ -4,16 +4,15 @@
 // somewhere. Try not to create any copies of the `numbers` Vec!
 // Execute `rustlings hint arc1` for hints :)
 
-// I AM NOT DONE
+
 
 #![forbid(unused_imports)] // Do not change this, (or the next) line.
-use std::sync::Arc;
-use Mutex;
+use std::sync::{Arc,Mutex}; 
 use std::thread;
 
 fn main() {
     let numbers: Vec<_> = (0..100u32).collect();
-    let shared_numbers = Arc::new(Mutex::new(numbers))
+    let shared_numbers = Arc::new(Mutex::new(numbers));
     let mut joinhandles = Vec::new();
 
     for offset in 0..8 {
